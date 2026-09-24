@@ -1,0 +1,88 @@
+/* ============================================================
+   GamepadViewer — PS4 DualShock 4 Custom Dark/Neon-Purple Skin
+   ============================================================ */
+
+/* ---------- BASE BODY ---------- */
+.ds4 {
+  background-color: #0a0a0d !important;
+  background-image: none !important;
+}
+
+/* Kill default sprite backgrounds on all interactive elements so
+   custom glows/fills render cleanly on top of a flat dark base */
+.ds4 .button,
+.ds4 .bumper,
+.ds4 .trigger,
+.ds4 .stick,
+.ds4 .dpad .button {
+  background-image: none !important;
+  background-color: rgba(20, 20, 25, 0.85) !important;
+  transition: background-color 0.08s ease-out, box-shadow 0.08s ease-out, filter 0.08s ease-out;
+}
+
+/* ---------- ANALOG STICKS ---------- */
+
+/* Stick wells — permanent idle purple glow ring */
+.ds4 .stick {
+  background-color: rgba(15, 15, 20, 0.9) !important;
+  border-radius: 50% !important;
+  box-shadow:
+    0 0 12px #9D00FF,
+    inset 0 0 10px #7000FF !important;
+}
+
+.ds4 .stick.left,
+.ds4 .stick.right {
+  box-shadow:
+    0 0 12px #9D00FF,
+    inset 0 0 10px #7000FF !important;
+}
+
+/* Active stick head (moved or L3/R3 pressed) */
+.ds4 .stick.active {
+  background-color: #E000FF !important;
+  box-shadow:
+    0 0 25px #E000FF,
+    0 0 12px #9D00FF,
+    inset 0 0 10px #7000FF !important;
+}
+
+/* ---------- FACE BUTTONS (Cross / Circle / Square / Triangle) ---------- */
+.ds4 .button.a,
+.ds4 .button.b,
+.ds4 .button.x,
+.ds4 .button.y {
+  background-image: none !important;
+  background-color: rgba(10, 10, 12, 0.75) !important;
+  border-radius: 50% !important;
+  box-shadow: none;
+}
+
+.ds4 .button.a.pressed,
+.ds4 .button.b.pressed,
+.ds4 .button.x.pressed,
+.ds4 .button.y.pressed {
+  background-color: #FF00ED !important;
+  background-image: radial-gradient(circle, #FF00ED 0%, #A000FF 100%) !important;
+  box-shadow:
+    0 0 15px #FF00ED,
+    0 0 30px #A000FF !important;
+}
+
+/* ---------- BUMPERS (L1 / R1) & TRIGGERS (L2 / R2) ---------- */
+.ds4 .bumper,
+.ds4 .trigger {
+  background-color: rgba(10, 10, 12, 0.8) !important;
+  filter: none !important;
+}
+
+.ds4 .bumper.pressed,
+.ds4 .trigger.pressed {
+  background-color: #E000FF !important;
+  background-image: linear-gradient(to bottom, #E000FF 0%, rgba(160, 0, 255, 0.4) 100%) !important;
+  filter: drop-shadow(0 0 12px #E000FF) !important;
+}
+
+/* ---------- D-PAD ---------- */
+.ds4 .dpad .button {
+  background-color: transparent

@@ -1,79 +1,27 @@
 /* ============================================================
-   GamepadViewer — PS4 DualShock 4 — Clean Dark / Pink-Press Skin
+   GamepadViewer — PS4 DualShock 4 — Pink Press Glow (non-destructive)
    ============================================================ */
 
-/* ---------- BASE BODY ---------- */
-.ds4 {
-  background-color: #111111 !important;
-  background-image: none !important;
-}
-
-/* Kill default sprite backgrounds so custom colors render cleanly */
-.ds4 .button,
-.ds4 .bumper,
-.ds4 .trigger,
-.ds4 .stick,
-.ds4 .dpad .button {
-  background-image: none !important;
-  background-color: rgba(30, 30, 30, 0.85) !important;
-  transition: background-color 0.08s ease-out, box-shadow 0.08s ease-out, filter 0.08s ease-out;
-}
-
-/* ---------- ANALOG STICKS ---------- */
-
-/* Idle — plain dark, no glow */
-.ds4 .stick {
-  background-color: rgba(25, 25, 25, 0.9) !important;
-  border-radius: 50% !important;
-  box-shadow: none !important;
-}
-
-/* Active (moved or L3/R3 pressed) — pink */
+/* Analog stick glows pink when moved or L3/R3 pressed */
 .ds4 .stick.active {
-  background-color: #FF3DB5 !important;
-  box-shadow: 0 0 20px #FF3DB5 !important;
+  filter: drop-shadow(0 0 15px #FF3DB5) !important;
 }
 
-/* ---------- FACE BUTTONS (Cross / Circle / Square / Triangle) ---------- */
-.ds4 .button.a,
-.ds4 .button.b,
-.ds4 .button.x,
-.ds4 .button.y {
-  background-image: none !important;
-  background-color: rgba(20, 20, 20, 0.75) !important;
-  border-radius: 50% !important;
-  box-shadow: none !important;
-}
-
+/* Face buttons (Cross / Circle / Square / Triangle) glow pink when pressed */
 .ds4 .button.a.pressed,
 .ds4 .button.b.pressed,
 .ds4 .button.x.pressed,
 .ds4 .button.y.pressed {
-  background-color: #FF3DB5 !important;
-  box-shadow: 0 0 15px #FF3DB5, 0 0 30px #FF3DB5 !important;
-}
-
-/* ---------- BUMPERS (L1 / R1) & TRIGGERS (L2 / R2) ---------- */
-.ds4 .bumper,
-.ds4 .trigger {
-  background-color: rgba(20, 20, 20, 0.8) !important;
-  filter: none !important;
-}
-
-.ds4 .bumper.pressed,
-.ds4 .trigger.pressed {
-  background-color: #FF3DB5 !important;
   filter: drop-shadow(0 0 12px #FF3DB5) !important;
 }
 
-/* ---------- D-PAD ---------- */
-.ds4 .dpad .button {
-  background-color: transparent !important;
-  filter: none;
+/* Bumpers (L1/R1) and Triggers (L2/R2) glow pink when pressed */
+.ds4 .bumper.pressed,
+.ds4 .trigger.pressed {
+  filter: drop-shadow(0 0 12px #FF3DB5) !important;
 }
 
+/* D-Pad directions glow pink when pressed */
 .ds4 .dpad .button.pressed {
-  background-color: #FF3DB5 !important;
   filter: drop-shadow(0 0 10px #FF3DB5) !important;
-  box-shadow: 0 0 8px #FF3DB5 !important;
 }

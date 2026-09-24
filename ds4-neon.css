@@ -1,27 +1,58 @@
 /* ============================================================
-   GamepadViewer — PS4 DualShock 4 — Pink Press Glow (non-destructive)
+   GamepadViewer — Custom Matte PS4 Photo Skin + Pink Press Glow
    ============================================================ */
 
-/* Analog stick glows pink when moved or L3/R3 pressed */
+/* Replace the default DS4 artwork with your custom photo */
+.ds4 {
+  background-image: url(https://cultsan.github.io/ds4-overlay/ds4-controller.png) !important;
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
+  background-color: transparent !important;
+}
+
+/* Hide default icon sprites on interactive zones, but KEEP their default position/size */
+.ds4 .stick,
+.ds4 .button,
+.ds4 .bumper,
+.ds4 .dpad .button {
+  background-image: none !important;
+  background-color: transparent !important;
+}
+
+/* Draw matte L2/R2 trigger caps using GamepadViewer's own trigger zone position */
+.ds4 .trigger {
+  background-image: none !important;
+  background-color: #161616 !important;
+  border-radius: 40% / 60% !important;
+  box-shadow:
+    inset 0 -3px 6px rgba(0, 0, 0, 0.6),
+    inset 0 2px 3px rgba(255, 255, 255, 0.05) !important;
+}
+
+/* ---------- PINK PRESS GLOW ---------- */
 .ds4 .stick.active {
   filter: drop-shadow(0 0 15px #FF3DB5) !important;
 }
 
-/* Face buttons (Cross / Circle / Square / Triangle) glow pink when pressed */
 .ds4 .button.a.pressed,
 .ds4 .button.b.pressed,
 .ds4 .button.x.pressed,
 .ds4 .button.y.pressed {
-  filter: drop-shadow(0 0 12px #FF3DB5) !important;
+  background-color: rgba(255, 61, 181, 0.85) !important;
+  box-shadow: 0 0 15px #FF3DB5, 0 0 30px #FF3DB5 !important;
 }
 
-/* Bumpers (L1/R1) and Triggers (L2/R2) glow pink when pressed */
-.ds4 .bumper.pressed,
+.ds4 .bumper.pressed {
+  background-color: rgba(255, 61, 181, 0.85) !important;
+  box-shadow: 0 0 12px #FF3DB5 !important;
+}
+
 .ds4 .trigger.pressed {
-  filter: drop-shadow(0 0 12px #FF3DB5) !important;
+  background-color: #FF3DB5 !important;
+  box-shadow: 0 0 15px #FF3DB5 !important;
 }
 
-/* D-Pad directions glow pink when pressed */
 .ds4 .dpad .button.pressed {
-  filter: drop-shadow(0 0 10px #FF3DB5) !important;
-}
+  background-color: rgba(255, 61, 181, 0.6) !important;
+  box-shadow: 0 0 10px #FF3DB5 !important;
+} 
